@@ -19,6 +19,10 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
+Route::view('gallery', 'gallery')
+    ->middleware(['auth'])
+    ->name('gallery');
+
 Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
