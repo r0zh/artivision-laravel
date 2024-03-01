@@ -30,12 +30,28 @@ class ImageTableSeeder extends Seeder
             ],
             [
                 'user_id' => 1,
-                'path' => 'https://placehold.co/768x512',
-                'seed' => 12345,
+                'path' => 'https://placehold.co/512x768',
+                'seed' => 1234567,
+                'positivePrompt' => 'This is a positive prompt.',
+                'negativePrompt' => 'This is a negative prompt.',
+            ],
+
+            [
+                'user_id' => 1,
+                'path' => 'https://placehold.co/512x768',
+                'seed' => 1234567,
+                'positivePrompt' => 'This is a positive prompt.',
+                'negativePrompt' => 'This is a negative prompt.',
+            ],
+            [
+                'user_id' => 1,
+                'path' => 'https://placehold.co/512x512',
+                'seed' => 123456,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
 
             ],
+
             [
                 'user_id' => 2,
                 'path' => 'https://placehold.co/512x768',
@@ -51,14 +67,7 @@ class ImageTableSeeder extends Seeder
                 'negativePrompt' => 'This is a negative prompt.',
 
             ],
-            [
-                'user_id' => 2,
-                'path' => 'https://placehold.co/768x512',
-                'seed' => 12345,
-                'positivePrompt' => 'This is a positive prompt.',
-                'negativePrompt' => 'This is a negative prompt.',
 
-            ],
         ]);
     }
 }
