@@ -20,7 +20,7 @@ Route::view('dashboard', 'dashboard')
     ->name('dashboard');
 
 Route::view('gallery', 'gallery')
-    ->middleware(['auth'])
+    ->middleware('auth')
     ->name('gallery');
 
 Route::view('profile', 'profile')
