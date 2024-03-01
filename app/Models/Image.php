@@ -20,4 +20,9 @@ class Image extends Model
         'positivePrompt',
         'negativePrompt',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class)->first();
+    }
 }
