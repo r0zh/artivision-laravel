@@ -11,7 +11,7 @@
                         <div>
                             <img src="{{ $image->path }}" alt="{{ $image->positivePrompt }}" class="w-full h-auto">
                         </div>
-                        <div class="p-2">
+                        <div class="relative p-2">
                             <h1 class="text-3xl font-bold">Seed</h1>
                             <p>{{ $image->seed }}</p>
                             <h1 class="text-3xl font-bold">Positive Prompt</h1>
@@ -20,6 +20,21 @@
                             <p>{{ $image->negativePrompt }}</p>
                             <h1 class="text-3xl font-bold">User</h1>
                             <p>{{ $image->user()->name }}</p>
+                            @if ($image->user()->id == auth()->id())
+                                <div class="flex absolute bottom-0 left-0 justify-end">
+                                    <!-- togle public -->
+                                    <button
+                                        class="py-2 px-4 text-white  {{ $image->public ? 'bg-purple-600' : 'bg-blue-500' }} rounded-md"
+                                        wire:click="togglePublic({{ $image->id }})">
+                                        {{ $image->public ? 'Make Private' : 'Make Public' }}
+                                    </button>
+
+                                </div>
+                                <div class="flex absolute right-0 bottom-0 justify-end">
+                                    <button class="py-2 px-4 text-white bg-red-500 rounded-md"
+                                        wire:click="deleteImage({{ $image->id }})">Delete</button>
+                                </div>
+                            @endif
                         </div>
                         <svg class="absolute top-0 right-0 p-2 w-12 cursor-pointer" fill="#000000" viewBox="0 0 32 32"
                             xmlns="http://www.w3.org/2000/svg" wire:click="deselectImage">
