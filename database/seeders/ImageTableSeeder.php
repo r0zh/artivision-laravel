@@ -16,7 +16,7 @@ class ImageTableSeeder extends Seeder
         DB::table('image')->insert([
             [
                 'user_id' => 1,
-                'path' => 'images/johndoe/512x768.png',
+                'path' => 'images/1_1_johndoe/512x768.png',
                 'seed' => 1234567,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
@@ -24,7 +24,7 @@ class ImageTableSeeder extends Seeder
             ],
             [
                 'user_id' => 1,
-                'path' => 'images/johndoe/512x512.png',
+                'path' => 'images/1_johndoe/512x512.png',
                 'seed' => 123456,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
@@ -32,7 +32,7 @@ class ImageTableSeeder extends Seeder
             ],
             [
                 'user_id' => 1,
-                'path' => 'images/johndoe/512x768.png',
+                'path' => 'images/1_johndoe/512x768.png',
                 'seed' => 1234567,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
@@ -41,7 +41,7 @@ class ImageTableSeeder extends Seeder
 
             [
                 'user_id' => 1,
-                'path' => 'images/johndoe/512x768.png',
+                'path' => 'images/1_johndoe/512x768.png',
                 'seed' => 1234567,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
@@ -49,7 +49,7 @@ class ImageTableSeeder extends Seeder
             ],
             [
                 'user_id' => 1,
-                'path' => 'images/johndoe/512x512.png',
+                'path' => 'images/1_johndoe/512x512.png',
                 'seed' => 123456,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
@@ -59,7 +59,7 @@ class ImageTableSeeder extends Seeder
 
             [
                 'user_id' => 2,
-                'path' => 'images/janedoe/512x768.png',
+                'path' => 'images/2_janedoe/512x768.png',
                 'seed' => 1234567,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
@@ -67,7 +67,7 @@ class ImageTableSeeder extends Seeder
             ],
             [
                 'user_id' => 2,
-                'path' => 'images/janedoe/512x512.png',
+                'path' => 'images/2_janedoe/512x512.png',
                 'seed' => 123456,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
@@ -77,13 +77,13 @@ class ImageTableSeeder extends Seeder
 
         ]);
 
-        Storage::disk('public')->makeDirectory('images/johndoe');
-        Storage::disk('public')->put('images/johndoe/512x512.png', file_get_contents('https://via.placeholder.com/512x512.png'));
-        Storage::disk('public')->put('images/johndoe/512x768.png', file_get_contents('https://via.placeholder.com/512x768.png'));
+        Storage::disk('public')->makeDirectory('images/1_johndoe');
+        Storage::disk('public')->put('images/1_johndoe/512x512.png', file_get_contents('https://via.placeholder.com/512x512.png'));
+        Storage::disk('public')->put('images/1_johndoe/512x768.png', file_get_contents('https://via.placeholder.com/512x768.png'));
 
-        Storage::disk('public')->makeDirectory('images/janedoe');
-        Storage::disk('public')->put('images/janedoe/512x512.png', file_get_contents('https://via.placeholder.com/512x512.png'));
-        Storage::disk('public')->put('images/janedoe/512x768.png', file_get_contents('https://via.placeholder.com/512x768.png'));
+        Storage::disk('public')->makeDirectory('images/2_janedoe');
+        Storage::disk('public')->put('images/2_janedoe/512x512.png', file_get_contents('https://via.placeholder.com/512x512.png'));
+        Storage::disk('public')->put('images/2_janedoe/512x768.png', file_get_contents('https://via.placeholder.com/512x768.png'));
 
     }
 }

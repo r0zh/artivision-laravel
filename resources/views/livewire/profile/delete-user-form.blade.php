@@ -17,8 +17,8 @@ new class extends Component {
             'password' => ['required', 'string', 'current_password'],
         ]);
 
-        Storage::disk('public')->deleteDirectory('images/' . explode('@', Auth::user()->email)[0]);
-        Storage::disk('local')->deleteDirectory('images/' . explode('@', Auth::user()->email)[0]);
+        Storage::disk('public')->deleteDirectory('images/' . Auth::user()->id . '_' . explode('@', Auth::user()->email)[0]);
+        Storage::disk('local')->deleteDirectory('images/' . Auth::user()->id . '_' . explode('@', Auth::user()->email)[0]);
 
         tap(Auth::user(), $logout(...))->delete();
 

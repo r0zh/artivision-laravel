@@ -34,8 +34,8 @@ new #[Layout('layouts.guest')] class extends Component {
         Auth::login($user);
 
         // if directory images does not exist, create it with the user email without the domain
-        Storage::disk('public')->makeDirectory('images/' . explode('@', $user->email)[0]);
-        Storage::disk('local')->makeDirectory('images/' . explode('@', $user->email)[0]);
+        Storage::disk('public')->makeDirectory('images/' . $user->id . '_' . explode('@', $user->email)[0]);
+        Storage::disk('local')->makeDirectory('images/' . $user->id . '_' . explode('@', $user->email)[0]);
         $this->redirect(RouteServiceProvider::HOME, navigate: true);
     }
 }; ?>
