@@ -19,6 +19,7 @@ class Image extends Model
         'path',
         'positivePrompt',
         'negativePrompt',
+        'public',
     ];
 
     public function user()

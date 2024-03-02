@@ -19,6 +19,7 @@ class ImageTableSeeder extends Seeder
                 'seed' => 1234567,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
+                'public' => true,
             ],
             [
                 'user_id' => 1,
@@ -26,7 +27,7 @@ class ImageTableSeeder extends Seeder
                 'seed' => 123456,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
-
+                'public' => true,
             ],
             [
                 'user_id' => 1,
@@ -34,6 +35,7 @@ class ImageTableSeeder extends Seeder
                 'seed' => 1234567,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
+                'public' => true,
             ],
 
             [
@@ -42,6 +44,7 @@ class ImageTableSeeder extends Seeder
                 'seed' => 1234567,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
+                'public' => true,
             ],
             [
                 'user_id' => 1,
@@ -49,6 +52,7 @@ class ImageTableSeeder extends Seeder
                 'seed' => 123456,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
+                'public' => true,
 
             ],
 
@@ -58,6 +62,7 @@ class ImageTableSeeder extends Seeder
                 'seed' => 1234567,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
+                'public' => true,
             ],
             [
                 'user_id' => 2,
@@ -65,6 +70,7 @@ class ImageTableSeeder extends Seeder
                 'seed' => 123456,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
+                'public' => true,
 
             ],
 

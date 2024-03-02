@@ -18,6 +18,7 @@ return new class extends Migration
             $table->bigInteger('seed');
             $table->text('positivePrompt');
             $table->text('negativePrompt');
+            $table->boolean('public');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
         });
