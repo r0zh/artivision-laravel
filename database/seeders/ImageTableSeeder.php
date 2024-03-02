@@ -78,10 +78,12 @@ class ImageTableSeeder extends Seeder
         ]);
 
         Storage::disk('public')->makeDirectory('images/1_johndoe');
+        Storage::disk('local')->makeDirectory('images/1_johndoe');
         Storage::disk('public')->put('images/1_johndoe/512x512.png', file_get_contents('https://via.placeholder.com/512x512.png'));
         Storage::disk('public')->put('images/1_johndoe/512x768.png', file_get_contents('https://via.placeholder.com/512x768.png'));
 
         Storage::disk('public')->makeDirectory('images/2_janedoe');
+        Storage::disk('local')->makeDirectory('images/2_janedoe');
         Storage::disk('public')->put('images/2_janedoe/512x512.png', file_get_contents('https://via.placeholder.com/512x512.png'));
         Storage::disk('public')->put('images/2_janedoe/512x768.png', file_get_contents('https://via.placeholder.com/512x768.png'));
 
