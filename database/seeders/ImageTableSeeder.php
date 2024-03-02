@@ -16,7 +16,7 @@ class ImageTableSeeder extends Seeder
         DB::table('image')->insert([
             [
                 'user_id' => 1,
-                'path' => 'images/1_1_johndoe/512x768.png',
+                'path' => 'images/1_johndoe/512x768.png',
                 'seed' => 1234567,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
