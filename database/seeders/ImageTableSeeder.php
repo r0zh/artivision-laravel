@@ -15,7 +15,7 @@ class ImageTableSeeder extends Seeder
         DB::table('image')->insert([
             [
                 'user_id' => 1,
-                'path' => 'https://placehold.co/512x768',
+                'path' => 'storage/512x768.png',
                 'seed' => 1234567,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
@@ -23,7 +23,7 @@ class ImageTableSeeder extends Seeder
             ],
             [
                 'user_id' => 1,
-                'path' => 'https://placehold.co/512x512',
+                'path' => 'storage/512x512.png',
                 'seed' => 123456,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
@@ -31,7 +31,7 @@ class ImageTableSeeder extends Seeder
             ],
             [
                 'user_id' => 1,
-                'path' => 'https://placehold.co/512x768',
+                'path' => 'storage/512x768.png',
                 'seed' => 1234567,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
@@ -40,7 +40,7 @@ class ImageTableSeeder extends Seeder
 
             [
                 'user_id' => 1,
-                'path' => 'https://placehold.co/512x768',
+                'path' => 'storage/512x768.png',
                 'seed' => 1234567,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
@@ -48,7 +48,7 @@ class ImageTableSeeder extends Seeder
             ],
             [
                 'user_id' => 1,
-                'path' => 'https://placehold.co/512x512',
+                'path' => 'storage/512x512.png',
                 'seed' => 123456,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
@@ -58,7 +58,7 @@ class ImageTableSeeder extends Seeder
 
             [
                 'user_id' => 2,
-                'path' => 'https://placehold.co/512x768',
+                'path' => 'storage/512x768.png',
                 'seed' => 1234567,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
@@ -66,7 +66,7 @@ class ImageTableSeeder extends Seeder
             ],
             [
                 'user_id' => 2,
-                'path' => 'https://placehold.co/512x512',
+                'path' => 'storage/512x512.png',
                 'seed' => 123456,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
