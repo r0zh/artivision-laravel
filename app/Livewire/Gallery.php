@@ -11,6 +11,7 @@ class Gallery extends Component {
 
     public $filter = 'all';
 
+    public $selectedImage = null;
     public $filteredImages;
 
     public function mount() {
@@ -22,6 +23,7 @@ class Gallery extends Component {
 
     public function updateFilterVisibility($filter, $force = false) {
         if ($filter != $this->filter || $force) {
+
             $this->filter         = $filter;
             $this->filteredImages = match ($filter) {
                 'all'     => $this->images,
@@ -32,15 +34,9 @@ class Gallery extends Component {
         }
     }
 
-    #[On('publicImageRemoved')]
-    public function publicImageRemoved($image) {
-        $this->publicImages->forget($image->id);
-        $this->updateFilterVisibility($this->filter, true);
-    }
-
-    #[On('privateImageRemoved')]
-    public function privateImageRemoved($image) {
-        $this->privateImages->forget($image->id);
+    #[On('imageDeleted')]
+    public function imageDeleted() {
+        $this->images = Image::where('user_id', auth()->id())->get();
         $this->updateFilterVisibility($this->filter, true);
     }
 
@@ -48,6 +44,11 @@ class Gallery extends Component {
     public function imageVisibilityUpdated() {
         $this->images = Image::where('user_id', auth()->id())->get();
         $this->updateFilterVisibility($this->filter, true);
+    }
+
+    #[On('imageSelected')]
+    public function imageSelected($id) {
+        $this->dispatch('openModal', "ImageDetails", ['id' => $id]);
     }
 
     public function render() {

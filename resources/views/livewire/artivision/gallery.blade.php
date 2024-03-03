@@ -1,4 +1,5 @@
 <div>
+@livewire('wire-elements-modal')
     @livewire('FilterVisibility')
     @empty($images)
         <p>There are no images.</p>

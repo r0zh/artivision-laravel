@@ -2,19 +2,17 @@
 
 namespace App\Livewire;
 
-use Livewire\Component;
 
-class FilterVisibility extends Component
-{
+use LivewireUI\Modal\ModalComponent;
+
+class FilterVisibility extends ModalComponent {
     public $filter = 'all';
 
-    public function updateFilter()
-    {
+    public function updateFilter() {
         $this->dispatch('filterUpdated', $this->filter);
     }
 
-    public function render()
-    {
+    public function render() {
         return view('livewire.artivision.components.filter-visibility');
     }
 }
