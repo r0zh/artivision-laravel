@@ -1,5 +1,5 @@
 *
 !public/
-!images/
+!private_images/
 !.gitignore
-images/*
+private_images/*

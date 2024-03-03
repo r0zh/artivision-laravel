@@ -94,13 +94,10 @@ class Gallery extends Component
     {
         $image = Image::find($id);
         if ($image->public) {
-            $path = Str::replaceFirst('storage/', '', $image->path);
-            Storage::disk('local')->put($path, Storage::disk('public')->get($path));
-            $image->path = storage_path('$path');
+            $newPath = Str::replaceFirst('images/', 'private_images/', $image->path);
+            Storage::disk('local')->put($newPath, Storage::disk('public')->get($image->path));
         } else {
-            $path = Str::replaceFirst('storage/', '', $image->path);
-            Storage::disk('local')->put($path, Storage::disk('public')->get($path));
-            $image->path = 'storage/'.$path;
+            Storage::disk('local')->put($image->path, Storage::disk('public')->get($image->path));
         }
         $image->public = ! $image->public;
         $image->save();

@@ -27,6 +27,6 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-Route::get('/images/{user}/{file}', [App\Http\Controllers\ImageController::class, 'getImage']);
+Route::get('/private_images/{user}/{file}', [App\Http\Controllers\ImageController::class, 'getImage']);
 
 require __DIR__.'/auth.php';

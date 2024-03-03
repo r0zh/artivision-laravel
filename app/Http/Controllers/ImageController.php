@@ -12,7 +12,7 @@ class ImageController extends Controller
     {
         $id = Str::before($user, '_');
         if ($id == auth()->id()) {
-            $file = Storage::disk('local')->get('images/'.$user.'/'.$file);
+            $file = Storage::disk('local')->get('private_images/'.$user.'/'.$file);
             $type = Storage::mimeType($file);
 
             $response = Response::make($file, 200);
