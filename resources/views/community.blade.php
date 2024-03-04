@@ -1,3 +1,3 @@
 <x-app-layout>
-    <livewire:Comunity>
+    <livewire:community>
 </x-app-layout>

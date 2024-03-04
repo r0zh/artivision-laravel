@@ -34,8 +34,8 @@ new class extends Component {
                     <x-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')" wire:navigate>
                         {{ __('Gallery') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('comunity')" :active="request()->routeIs('comunity')" wire:navigate>
-                        {{ __('Comunity') }}
+                    <x-nav-link :href="route('community')" :active="request()->routeIs('community')" wire:navigate>
+                        {{ __('Community') }}
                     </x-nav-link>
                     @if (auth()->user()->hasRole('admin'))
                         <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')" wire:navigate>

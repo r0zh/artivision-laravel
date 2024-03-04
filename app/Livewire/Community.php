@@ -6,7 +6,7 @@ use App\Models\Image;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
-class Comunity extends Component {
+class community extends Component {
     public $images;
 
     public $selectedImage = null;
@@ -68,6 +68,6 @@ class Comunity extends Component {
     }
 
     public function render() {
-        return view('livewire.artivision.comunity');
+        return view('livewire.artivision.community');
     }
 }

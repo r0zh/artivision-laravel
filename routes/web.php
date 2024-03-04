@@ -27,9 +27,9 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-Route::view('comunity', 'comunity')
+Route::view('community', 'community')
     ->middleware(['auth'])
-    ->name('comunity');
+    ->name('community');
 
 Route::get('/private_images/{user}/{file}', [App\Http\Controllers\ImageController::class, 'getImage']);
 
