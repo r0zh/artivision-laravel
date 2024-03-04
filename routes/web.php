@@ -33,6 +33,6 @@ Route::view('comunity', 'comunity')
 
 Route::get('/private_images/{user}/{file}', [App\Http\Controllers\ImageController::class, 'getImage']);
 
-Route::view('/admin', 'admin')->middleware('permission:admin')->name('admin');
+Route::view('/admin', 'admin')->middleware('checkPermission:admin')->name('admin');
 
 require __DIR__ . '/auth.php';
