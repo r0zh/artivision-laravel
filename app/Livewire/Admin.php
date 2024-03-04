@@ -35,7 +35,6 @@ class Admin extends Component {
     public function updateSearch($search) {
         if ($search != $this->search) {
             $this->search = $search;
-            dump("a");
             $this->getImages();
         }
 

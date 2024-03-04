@@ -66,7 +66,6 @@ class Gallery extends Component {
                 ->orderBy('created_at', $this->direction)
                 ->get();
         }
-        dump($this->images);
     }
 
     #[On('imageDeleted')]
