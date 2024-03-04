@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Livewire\Volt\Volt;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,15 +13,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::view('/', 'welcome');
+Route::view('/', 'upload')->middleware(['auth'])->name('upload');
 
 Route::view('upload', 'upload')
     ->middleware(['auth', 'verified'])
     ->name('upload');
 
 Route::view('gallery', 'gallery')
-    ->middleware('auth')
+    ->middleware(['auth'])
     ->name('gallery');
 
 Route::view('profile', 'profile')
