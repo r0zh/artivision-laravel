@@ -5,74 +5,79 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
-class ImageTableSeeder extends Seeder
-{
+
+class ImageTableSeeder extends Seeder {
     /**
      * Run the database seeds.
      */
-    public function run(): void
-    {
+    public function run(): void {
         DB::table('image')->insert([
             [
-                'user_id' => 1,
-                'path' => 'images/1_johndoe/512x768.png',
-                'seed' => 1234567,
+                'user_id'        => 1,
+                'path'           => 'images/1_johndoe/512x768.png',
+                'seed'           => 1234567,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
-                'public' => true,
+                'public'         => true,
+                'created_at'     => now(),
             ],
             [
-                'user_id' => 1,
-                'path' => 'images/1_johndoe/512x512.png',
-                'seed' => 123456,
+                'user_id'        => 1,
+                'path'           => 'images/1_johndoe/512x512.png',
+                'seed'           => 123456,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
-                'public' => true,
+                'public'         => true,
+                'created_at'     => now(),
             ],
             [
-                'user_id' => 1,
-                'path' => 'images/1_johndoe/512x768.png',
-                'seed' => 1234567,
+                'user_id'        => 1,
+                'path'           => 'images/1_johndoe/512x768.png',
+                'seed'           => 1234567,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
-                'public' => true,
+                'public'         => true,
+                'created_at'     => Carbon::yesterday(),
+            ],
+            [
+                'user_id'        => 1,
+                'path'           => 'images/1_johndoe/512x768.png',
+                'seed'           => 1234567,
+                'positivePrompt' => 'This is a positive prompt.',
+                'negativePrompt' => 'This is a negative prompt.',
+                'public'         => true,
+                'created_at'     => now(),
+            ],
+            [
+                'user_id'        => 1,
+                'path'           => 'images/1_johndoe/512x512.png',
+                'seed'           => 123456,
+                'positivePrompt' => 'This is a positive prompt.',
+                'negativePrompt' => 'This is a negative prompt.',
+                'public'         => true,
+                'created_at'     => Carbon::yesterday(),
+
             ],
 
             [
-                'user_id' => 1,
-                'path' => 'images/1_johndoe/512x768.png',
-                'seed' => 1234567,
+                'user_id'        => 2,
+                'path'           => 'images/2_janedoe/512x768.png',
+                'seed'           => 1234567,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
-                'public' => true,
+                'public'         => true,
+                'created_at'     => now(),
             ],
             [
-                'user_id' => 1,
-                'path' => 'images/1_johndoe/512x512.png',
-                'seed' => 123456,
+                'user_id'        => 2,
+                'path'           => 'images/2_janedoe/512x512.png',
+                'seed'           => 123456,
                 'positivePrompt' => 'This is a positive prompt.',
                 'negativePrompt' => 'This is a negative prompt.',
-                'public' => true,
-
-            ],
-
-            [
-                'user_id' => 2,
-                'path' => 'images/2_janedoe/512x768.png',
-                'seed' => 1234567,
-                'positivePrompt' => 'This is a positive prompt.',
-                'negativePrompt' => 'This is a negative prompt.',
-                'public' => true,
-            ],
-            [
-                'user_id' => 2,
-                'path' => 'images/2_janedoe/512x512.png',
-                'seed' => 123456,
-                'positivePrompt' => 'This is a positive prompt.',
-                'negativePrompt' => 'This is a negative prompt.',
-                'public' => true,
-
+                'public'         => true,
+                'created_at'     => Carbon::yesterday(),
             ],
 
         ]);
