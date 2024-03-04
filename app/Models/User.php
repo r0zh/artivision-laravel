@@ -46,13 +46,9 @@ class User extends Authenticatable {
         return $this->hasMany(Image::class)->first();
     }
 
-    public function hasPermission($permissionName) {
-        foreach ($this->roles as $role) {
-            foreach ($role->permissions as $permission) {
-                if ($permission->name == $permissionName) {
-                    return true;
-                }
-            }
+    public function hasRole($roleName) {
+        if ($this->role->name === $roleName) {
+            return true;
         }
         return false;
     }
