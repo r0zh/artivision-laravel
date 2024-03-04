@@ -9,13 +9,18 @@
     </div>
     @if ($images->isEmpty())
         <div class="flex justify-center items-start p-4">
-            <x-alert title="There are no images to show!" secondary solid
-                class="w-full lg:w-1/3 !dark:text-white !font-semibold " />
+
+            <div class="relative py-3 px-4 text-yellow-800 bg-yellow-100 rounded dark:text-yellow-100 dark:bg-yellow-800"
+                role="alert">
+                <strong class="font-bold">No Images Found!</strong>
+                <span class="block sm:inline">There are currently no images to display.</span>
+            </div>
+
         </div>
     @else
         <div class="p-4 columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5">
             @foreach ($images as $image)
-                <livewire:image-component :image="$image" :wire:key="$image->id" lazy/>
+                <livewire:image-component :image="$image" :wire:key="$image->id" lazy />
             @endforeach
         </div>
     @endempty
