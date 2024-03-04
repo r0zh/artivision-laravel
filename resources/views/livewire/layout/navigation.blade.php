@@ -34,6 +34,9 @@ new class extends Component {
                     <x-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')" wire:navigate>
                         {{ __('Gallery') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('comunity')" :active="request()->routeIs('comunity')" wire:navigate>
+                        {{ __('Comunity') }}
+                    </x-nav-link>
                 </div>
             </div>
 
