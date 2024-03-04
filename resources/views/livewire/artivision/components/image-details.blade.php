@@ -1,4 +1,4 @@
-    <div class="grid relative grid-cols-2 gap-3 p-4 bg-white rounded-xl shadow-lg ">
+    <div class="grid relative grid-cols-2 gap-3 p-4 bg-white rounded-xl shadow-lg">
         <div class="w-fit">
             <img src="@if ($image->public == 1) {{ asset('storage/' . $image->path) }} @else {{ url($image->path) }} @endif"
                 alt="{{ $image->positivePrompt }}" class="w-fit max-h-[80vh]">
@@ -12,6 +12,8 @@
             <p>{{ $image->negativePrompt }}</p>
             <h1 class="text-3xl font-bold">User</h1>
             <p>{{ $image->user()->name }}</p>
+            <h1 class="text-3xl font-bold"> Created At</h1>
+            <p>{{ $dateCreated }}</p>
             @if ($image->user()->id == auth()->id())
                 <div class="flex absolute bottom-0 left-0 justify-end">
                     <!-- togle public -->

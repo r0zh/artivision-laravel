@@ -3,19 +3,26 @@
 namespace App\Livewire;
 
 use App\Models\Image;
-use Livewire\Attributes\On;
-use LivewireUI\Modal\ModalComponent;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Livewire\Attributes\On;
+use LivewireUI\Modal\ModalComponent;
 
-class ImageDetails extends ModalComponent {
+class ImageDetails extends ModalComponent
+{
     public $image;
 
-    public function mount($id) {
+    public $dateCreated;
+
+    public function mount($id)
+    {
         $this->image = Image::find($id);
+        $this->dateCreated = Carbon::parse($this->image->created_at)->format('d/m/Y');
     }
 
-    public function togglePublic() {
+    public function togglePublic()
+    {
         if ($this->image->public) {
             $newPath = Str::replaceFirst('images/', 'private_images/', $this->image->path);
             Storage::disk('local')->put($newPath, Storage::disk('public')->get($this->image->path));
@@ -28,14 +35,15 @@ class ImageDetails extends ModalComponent {
             $this->image->path = $newPath;
         }
 
-        $this->image->public = !$this->image->public;
+        $this->image->public = ! $this->image->public;
         $this->image->save();
 
         $this->dispatch('imageVisibilityUpdated');
 
     }
 
-    public function deleteImage() {
+    public function deleteImage()
+    {
         // destroy the image file
         $path = Str::replaceFirst('storage/', '', $this->image->path);
         if ($this->image->public) {
@@ -51,11 +59,13 @@ class ImageDetails extends ModalComponent {
     }
 
     #[On('imageVisibilityUpdated')]
-    public function imageVisibilityUpdated() {
+    public function imageVisibilityUpdated()
+    {
         $this->image = Image::find($this->image->id);
     }
 
-    public function render() {
+    public function render()
+    {
         return view('livewire.artivision.components.image-details');
     }
 }
