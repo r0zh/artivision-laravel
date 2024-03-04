@@ -14,7 +14,7 @@
             <p>{{ $image->user()->name }}</p>
             <h1 class="text-3xl font-bold"> Created At</h1>
             <p>{{ $dateCreated }}</p>
-            @if ($image->user()->id == auth()->id())
+            @if ($image->user()->id == auth()->id() || auth()->user()->hasRole('moderator') || auth()->user()->hasRole('admin'))
                 <div class="flex absolute bottom-0 left-0 justify-end">
                     <!-- togle public -->
                     <button
@@ -22,13 +22,15 @@
                         wire:click="togglePublic({{ $image->id }})">
                         {{ $image->public ? 'Make Private' : 'Make Public' }}
                     </button>
-
                 </div>
+            @endif
+            @if ($image->user()->id == auth()->id() || auth()->user()->hasRole('admin'))
                 <div class="flex absolute right-0 bottom-0 justify-end">
                     <button class="py-2 px-4 text-white bg-red-500 rounded-md"
                         wire:click="deleteImage({{ $image->id }})">Delete</button>
                 </div>
             @endif
+
         </div>
         <svg class="absolute top-0 right-0 p-2 w-12 cursor-pointer" fill="#000000" viewBox="0 0 32 32"
             xmlns="http://www.w3.org/2000/svg" wire:click="$dispatch('closeModal')">

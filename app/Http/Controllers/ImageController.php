@@ -6,13 +6,11 @@ use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-class ImageController extends Controller
-{
-    public function getImage($user, $file)
-    {
+class ImageController extends Controller {
+    public function getImage($user, $file) {
         $id = Str::before($user, '_');
-        if ($id == auth()->id()) {
-            $file = Storage::disk('local')->get('private_images/'.$user.'/'.$file);
+        if ($id == auth()->id() || auth()->user()->hasRole('admin')) {
+            $file = Storage::disk('local')->get('private_images/' . $user . '/' . $file);
             $type = Storage::mimeType($file);
 
             $response = Response::make($file, 200);
