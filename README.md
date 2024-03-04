@@ -1,66 +1,66 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Artivision: Almacén de Imágenes en la Nube
+=============================================
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Descripción del Proyecto
+------------------------
 
-## About Laravel
+Artivision es una plataforma innovadora diseñada para permitir a los usuarios almacenar y compartir sus imágenes generadas por IA en la nube. Esta aplicación ofrece una solución única para los artistas, fotógrafos y cualquier persona interesada en compartir su trabajo con la comunidad.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Características Principales
+---------------------------
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+*   **Subida de Imágenes Generadas por IA**: Los usuarios pueden subir imágenes generadas por IA junto con sus parámetros específicos, facilitando la replicación y el intercambio de ideas.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Tecnologías Utilizadas
+----------------------
 
-## Learning Laravel
+*   **Laravel 10**: Un framework robusto y eficiente que proporciona una base sólida para el desarrollo de aplicaciones web.
+*   **Livewire**: Simplifica la creación de interfaces dinámicas en PHP, permitiendo la construcción de aplicaciones web modernas sin salir del entorno de Laravel.
+*   **wire-elements/modal**: Un componente Livewire que ofrece una modal personalizable y fácil de usar, manteniendo el estado de múltiples modales hijos. [wire-elements/modal](https://github.com/wire-elements/modal?tab=readme-ov-file)
+*   **AlpineJs**: Una librería ligera y potente para crear interacciones dinámicas en la web con un enfoque declarativo.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Estructura de la base de datos
+------------------------------
+![Alt text](image(2).png)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Roles de Usuario
+----------------
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+*   **Usuario Normal**: Puede subir sus propias fotos, establecerlas como privadas o públicas y eliminarlas.
+*   **Moderador**: Similar al usuario normal, pero con la capacidad adicional de marcar las fotos de otros usuarios como privadas, eliminándolas de la pestaña de la comunidad.
+*   **Admin**: Tiene todas las capacidades de un moderador, además de poder ver y eliminar fotos de todos los usuarios.
 
-## Laravel Sponsors
+Instalación y Uso
+-----------------
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Para instalar y comenzar a utilizar Artivision, sigue estos pasos:
 
-### Premium Partners
+1.  Clona el repositorio del proyecto.
+2.  Navega al directorio del proyecto.
+3.  Ejecuta `composer install` para instalar las dependencias de PHP.
+4.  Ejecuta `npm install` para instalar las dependencias de Node.js.
+5.  Utiliza `sail up -d` para iniciar el servidor Laravel Sail.
+6.  Ejecuta `sail artisan migrate` para aplicar las migraciones de la base de datos.
+7.  Ejecuta `sail artisan db:seed` para sembrar la base de datos con datos de prueba.
+8.  Ejecuta `sail artisan storage:link` para crear un enlace simbólico desde el directorio `public/storage` al directorio `storage/app/public`.
+9.  Ejecuta `npm run dev` para compilar los assets de JavaScript y CSS.
+10.  Accede al servidor en `localhost`.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Cuentas de Prueba
 
-## Contributing
+*   **Usuario**: gmail: [johndoe@gmail.com](mailto:johndoe@gmail.com), contraseña: password, rol: usuario
+*   **Moderador**: gmail: [janedoe@gmail.com](mailto:janedoe@gmail.com), contraseña: password, rol: moderador
+*   **Admin**: gmail: [admin@admin.com](mailto:admin@admin.com), contraseña: password, rol: admin
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Páginas Principales
 
-## Code of Conduct
+*   **Upload**: Para subir una nueva foto.
+*   **Gallery**: Muestra la galería personal del usuario.
+*   **Community**: Visualiza todas las fotos públicas, incluyendo las del usuario.
+*   **Admin**: Acceso a todas las fotos, públicas y privadas, para moderadores y administradores.
+*   **Profile**: Permite editar el perfil del usuario.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Contribuir
+----------
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Si estás interesado en contribuir a Artivision, revisa las pautas de contribución y no dudes en abrir un issue o pull request. ¡Estamos abiertos a nuevas ideas y mejoras!
