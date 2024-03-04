@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ebc18220e8e838afd608b16bf41cc5ab",
+    "content-hash": "c88392eee053f4b0030ccb79ac3159af",
     "packages": [
         {
             "name": "brick/math",
@@ -6016,39 +6016,113 @@
             "time": "2023-12-08T09:31:14+00:00"
         },
         {
-            "name": "wireui/wireui",
-            "version": "v1.18.9",
+            "name": "wireui/heroicons",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/wireui/wireui.git",
-                "reference": "cf49242fa46fdebdb6bf05d50d0cd575b16aaf31"
+                "url": "https://github.com/wireui/heroicons.git",
+                "reference": "7ed75caeec4cbb4f3dcdeba2d17b430ef19b575c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wireui/wireui/zipball/cf49242fa46fdebdb6bf05d50d0cd575b16aaf31",
-                "reference": "cf49242fa46fdebdb6bf05d50d0cd575b16aaf31",
+                "url": "https://api.github.com/repos/wireui/heroicons/zipball/7ed75caeec4cbb4f3dcdeba2d17b430ef19b575c",
+                "reference": "7ed75caeec4cbb4f3dcdeba2d17b430ef19b575c",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "10.*",
-                "livewire/livewire": "^3.0",
-                "php": "^8.1"
+                "laravel/framework": "^9.16|^10.0",
+                "php": "^8.1|^8.2|^8.3"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.9",
+                "laravel/pint": "^1.6",
                 "mockery/mockery": "^1.5",
-                "orchestra/testbench": "^8.0",
-                "orchestra/testbench-dusk": "^8.0",
-                "pestphp/pest": "^1.21",
-                "pestphp/pest-plugin-mock": "^1.0",
-                "phpunit/phpunit": "^9.5",
-                "psy/psysh": "@stable"
+                "nunomaduro/larastan": "^2.4",
+                "orchestra/testbench": "^7.7.0|^8.0.0",
+                "pestphp/pest": "^1.22",
+                "phpunit/phpunit": "^9.6"
             },
             "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
-                        "WireUi\\Providers\\WireUiServiceProvider"
+                        "WireUi\\Heroicons\\HeroiconsServiceProvider"
+                    ]
+                },
+                "aliases": []
+            },
+            "autoload": {
+                "psr-4": {
+                    "WireUi\\Heroicons\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PH7-Jack",
+                    "email": "pedrolivertwd@gmail.com"
+                }
+            ],
+            "description": "The Tailwind Heroicons for laravel blade by WireUI",
+            "keywords": [
+                "blade components",
+                "blade heroicons",
+                "laravel components",
+                "livewire icons",
+                "livewire icons components",
+                "wireui"
+            ],
+            "support": {
+                "issues": "https://github.com/wireui/heroicons/issues",
+                "source": "https://github.com/wireui/heroicons/tree/v2.5.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/PH7-Jack",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-02-19T06:41:37+00:00"
+        },
+        {
+            "name": "wireui/wireui",
+            "version": "v2.0.0-beta.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wireui/wireui.git",
+                "reference": "ab254c0efc8cf8377ea9530fdf41f9c6b8e2c05e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wireui/wireui/zipball/ab254c0efc8cf8377ea9530fdf41f9c6b8e2c05e",
+                "reference": "ab254c0efc8cf8377ea9530fdf41f9c6b8e2c05e",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^10.0",
+                "livewire/livewire": "^3.1",
+                "php": "^8.2",
+                "wireui/heroicons": "^2.4"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.10",
+                "livewire/volt": "^1.3",
+                "mockery/mockery": "^1.5",
+                "orchestra/testbench": "^8.0",
+                "orchestra/testbench-dusk": "^8.0",
+                "pestphp/pest": "^2.24",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "pestphp/pest-plugin-livewire": "^2.1",
+                "phpunit/phpunit": "^10.0",
+                "psy/psysh": "^0.11.12"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "WireUi\\ServiceProvider"
                     ],
                     "aliases": []
                 }
@@ -6078,7 +6152,7 @@
             ],
             "support": {
                 "issues": "https://github.com/wireui/wireui/issues",
-                "source": "https://github.com/wireui/wireui/tree/v1.18.9"
+                "source": "https://github.com/wireui/wireui/tree/v2.0.0-beta.0"
             },
             "funding": [
                 {
@@ -6086,7 +6160,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-25T05:18:54+00:00"
+            "time": "2023-11-03T20:55:47+00:00"
         }
     ],
     "packages-dev": [
@@ -8581,7 +8655,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "wireui/wireui": 10
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
