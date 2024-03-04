@@ -8,11 +8,13 @@ use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
 
 
-class ImageTableSeeder extends Seeder {
+class ImageTableSeeder extends Seeder
+{
     /**
      * Run the database seeds.
      */
-    public function run(): void {
+    public function run(): void
+    {
         DB::table('image')->insert([
             [
                 'user_id'        => 1,
@@ -36,7 +38,7 @@ class ImageTableSeeder extends Seeder {
                 'user_id'        => 1,
                 'path'           => 'images/1_johndoe/65535_52703934851_8c909d130a_c_512_512_nofilter.jpg',
                 'seed'           => 1234567,
-                'positivePrompt' => 'green, plant.',
+                'positivePrompt' => 'abstract, art.',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => true,
                 'created_at'     => Carbon::yesterday(),
@@ -59,7 +61,8 @@ class ImageTableSeeder extends Seeder {
                 'public'         => true,
                 'created_at'     => Carbon::yesterday(),
 
-            ], [
+            ],
+            [
                 'user_id'        => 1,
                 'path'           => 'images/1_johndoe/65535_53052627466_c5e437b4ab_c_512_768_nofilter.jpg',
                 'seed'           => 1234567,
@@ -87,10 +90,28 @@ class ImageTableSeeder extends Seeder {
                 'created_at'     => now(),
             ],
             [
+                'user_id'        => 1,
+                'path'           => 'private_images/1_johndoe/65535_52940735624_4d0052fd1e_c_512_768_nofilter.jpg',
+                'seed'           => 123456,
+                'positivePrompt' => 'pengiun, ice, cold, cute',
+                'negativePrompt' => 'This is a negative prompt.',
+                'public'         => false,
+                'created_at'     => now(),
+            ],
+            [
+                'user_id'        => 1,
+                'path'           => 'private_images/1_johndoe/65535_53001912562_3decc04d9d_h_512_768_nofilter.jpg',
+                'seed'           => 1234567,
+                'positivePrompt' => 'heart, metalic, green',
+                'negativePrompt' => 'This is a negative prompt.',
+                'public'         => false,
+                'created_at'     => now(),
+            ],
+            [
                 'user_id'        => 2,
                 'path'           => 'images/2_janedoe/512x768.png',
                 'seed'           => 1234567,
-                'positivePrompt' => 'This is a positive prompt.',
+                'positivePrompt' => 'placeholder',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => true,
                 'created_at'     => now(),
@@ -99,12 +120,29 @@ class ImageTableSeeder extends Seeder {
                 'user_id'        => 2,
                 'path'           => 'images/2_janedoe/512x512.png',
                 'seed'           => 123456,
-                'positivePrompt' => 'This is a positive prompt.',
+                'positivePrompt' => 'placeholder',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => true,
                 'created_at'     => Carbon::yesterday(),
             ],
-
+            [
+                'user_id'        => 2,
+                'path'           => 'images/2_janedoe/65535_52640991406_8754d28c89_b_768_768_nofilter.jpg',
+                'seed'           => 123456,
+                'positivePrompt' => 'space, galaxy.',
+                'negativePrompt' => 'This is a negative prompt.',
+                'public'         => true,
+                'created_at'     => Carbon::yesterday(),
+            ],
+            [
+                'user_id'        => 2,
+                'path'           => 'private_images/2_janedoe2/65535_52974542495_8e8301bae7_h_512_768_nofilter.jpg',
+                'seed'           => 1234567,
+                'positivePrompt' => 'conference, people.',
+                'negativePrompt' => 'This is a negative prompt.',
+                'public'         => false,
+                'created_at'     => now(),
+            ],
         ]);
 
         Storage::disk('public')->makeDirectory('images/1_johndoe');
@@ -117,12 +155,14 @@ class ImageTableSeeder extends Seeder {
         Storage::disk('public')->put('images/1_johndoe/65535_53052627466_c5e437b4ab_c_512_768_nofilter.jpg', file_get_contents('https://loremflickr.com/cache/resized/65535_53052627466_c5e437b4ab_c_512_768_nofilter.jpg'));
         Storage::disk('public')->put('images/1_johndoe/65535_52740248362_91bb36acce_h_512_768_nofilter.jpg', file_get_contents('https://loremflickr.com/cache/resized/65535_52740248362_91bb36acce_h_512_768_nofilter.jpg'));
         Storage::disk('public')->put('images/1_johndoe/65535_53535554439_e9b8c9af46_c_512_768_nofilter.jpg', file_get_contents('https://loremflickr.com/cache/resized/65535_53535554439_e9b8c9af46_c_512_768_nofilter.jpg'));
-
+        Storage::disk('local')->put('private_images/1_johndoe/65535_52940735624_4d0052fd1e_c_512_768_nofilter.jpg', file_get_contents('https://loremflickr.com/cache/resized/65535_52940735624_4d0052fd1e_c_512_768_nofilter.jpg'));
+        Storage::disk('local')->put('private_images/1_johndoe/65535_53001912562_3decc04d9d_h_512_768_nofilter.jpg', file_get_contents('https://loremflickr.com/cache/resized/65535_53001912562_3decc04d9d_h_512_768_nofilter.jpg'));
 
         Storage::disk('public')->makeDirectory('images/2_janedoe');
         Storage::disk('local')->makeDirectory('private_images/2_janedoe');
         Storage::disk('public')->put('images/2_janedoe/512x512.png', file_get_contents('https://via.placeholder.com/512x512.png'));
         Storage::disk('public')->put('images/2_janedoe/512x768.png', file_get_contents('https://via.placeholder.com/512x768.png'));
-
+        Storage::disk('public')->put('images/2_janedoe/65535_52640991406_8754d28c89_b_768_768_nofilter.jpg', file_get_contents('https://loremflickr.com/cache/resized/65535_52640991406_8754d28c89_b_768_768_nofilter.jpg'));
+        Storage::disk('local')->put('private_images/2_janedoe/65535_52974542495_8e8301bae7_h_512_768_nofilter.jpg', file_get_contents('https://loremflickr.com/cache/resized/65535_52974542495_8e8301bae7_h_512_768_nofilter.jpg'));
     }
 }
