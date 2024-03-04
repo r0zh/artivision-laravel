@@ -15,7 +15,7 @@
     @else
         <div class="p-4 columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5">
             @foreach ($images as $image)
-                <livewire:image-component :image="$image" :wire:key="$image->id" />
+                <livewire:image-component :image="$image" :wire:key="$image->id" lazy/>
             @endforeach
         </div>
     @endempty
