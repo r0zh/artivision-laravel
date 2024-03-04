@@ -1,5 +1,27 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" style="overflow: auto !important">
+
+<script>
+// Create a callback function to execute when mutations are observed
+var callback = function(mutationsList, observer) {
+    for(var mutation of mutationsList) {
+        if (mutation.type == 'attributes' && mutation.attributeName == 'style') {
+            // Check if the style attribute contains 'overflow: hidden'
+            if (document.documentElement.style.overflow === 'hidden') {
+                // Revert the change
+                document.documentElement.style.overflow = 'auto';
+            }
+        }
+    }
+};
+
+// Create an observer instance linked to the callback function
+var observer = new MutationObserver(callback);
+
+// Start observing the `html` tag for attribute changes
+observer.observe(document.documentElement, { attributes: true, attributeFilter: ['style'] });
+
+</script>
 
 <head>
     <meta charset="utf-8">
