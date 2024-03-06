@@ -9,7 +9,14 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Image;
 
+/**
+ * Class Create
+ *
+ * This class represents the Livewire component for creating an image in the Artivision application.
+ * It handles the fetching of image data, saving the image, and rendering the view.
+ */
 class Create extends Component {
+    // Properties
     public $fetching;
     public $positive_prompt;
     public $negative_prompt;
@@ -18,6 +25,8 @@ class Create extends Component {
     public $name;
     public $ratio = "1:1";
     public $style;
+    
+    // Validation rules
     protected $rules = [
         'name'            => 'required|string|min:2|max:255',
         'seed'            => 'required|numeric',
@@ -27,17 +36,36 @@ class Create extends Component {
         'style'           => 'required'
     ];
 
+    /**
+     * Mount the component.
+     *
+     * This method is called when the component is being mounted.
+     * It initializes the $fetching property.
+     */
     public function mount() {
         $this->fetching = false;
-
     }
 
+    /**
+     * Fetch the image data.
+     *
+     * This method is called when the user clicks the fetch button.
+     * It sets the $fetching property to true, validates the form data,
+     * and dispatches the 'fetch-image' event.
+     */
     public function fetch() {
         $this->fetching = true;
         $this->validate();
         $this->dispatch('fetch-image');
     }
 
+    /**
+     * Handle the 'fetch-image' event.
+     *
+     * This method is called when the 'fetch-image' event is dispatched.
+     * It retrieves the form data, sends a POST request to the image API,
+     * saves the image to storage, and sets the $fetching property to false.
+     */
     #[On('fetch-image')]
     public function fetchImage() {
         // get data from the form
@@ -46,7 +74,7 @@ class Create extends Component {
         $this->seed;
         $json     = json_encode(['positivePrompt' => $this->positive_prompt, 'negativePrompt' => $this->negative_prompt, "seed" => $this->seed, "ratio" => $this->ratio, "style" => $this->style]);
         $address  = "https://1843-2a0c-5a85-6402-c500-dee3-dd3c-b34e-c0d2.ngrok-free.app/get_image";
-        $response = Http::withBody($json, 'application/json')->timeout(120)
+        $response = Http::withBody($json, 'application/json')->timeout(60 * 3)
             ->withHeaders([
                 'Content-Type' => 'application/json',
             ])->post($address);
@@ -57,6 +85,15 @@ class Create extends Component {
         $this->fetching = false;
     }
 
+    /**
+     * Save the image.
+     *
+     * This method is called when the user clicks the save button.
+     * It moves the image to the user's directory, saves the image path to the database,
+     * and redirects to the gallery page.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function saveImage() {
         // move the image to the public or private directory
         $userPath = Auth::user()->id . '_' . explode('@', Auth::user()->email)[0];
@@ -80,8 +117,16 @@ class Create extends Component {
         return redirect()->to('/gallery');
     }
 
-
+    /**
+     * Render the component.
+     *
+     * This method is called to render the component's view.
+     *
+     * @return \Illuminate\View\View
+     */
     public function render() {
         return view('livewire.artivision.create');
+    }
+}
     }
 }
