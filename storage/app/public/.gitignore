@@ -2,3 +2,5 @@
 !.gitignore
 !images
 imgages/*
+!images/1_johndoe
+!images/2_janedoe
