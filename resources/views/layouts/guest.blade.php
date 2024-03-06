@@ -17,8 +17,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased text-gray-900">
-    <div class="flex flex-col items-center pt-6 min-h-screen bg-gray-100 sm:justify-center sm:pt-0 dark:bg-gray-900">
+<body class="font-sans antialiased text-gray-900 ">
+    <div class="flex flex-col items-center pt-6 min-h-screen bg-gray-100 sm:justify-center sm:pt-0 bg-[linear-gradient(180deg,_#000000_38.19%,_#6F42C1_100%)]">
         <div>
             <a href="/" wire:navigate>
                 <x-application-logo class="w-20 h-20 text-gray-500 fill-current" />
