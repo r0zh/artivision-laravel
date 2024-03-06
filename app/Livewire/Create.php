@@ -25,7 +25,7 @@ class Create extends Component {
     public $name;
     public $ratio = "1:1";
     public $style;
-    
+
     // Validation rules
     protected $rules = [
         'name'            => 'required|string|min:2|max:255',
@@ -126,7 +126,5 @@ class Create extends Component {
      */
     public function render() {
         return view('livewire.artivision.create');
-    }
-}
     }
 }
