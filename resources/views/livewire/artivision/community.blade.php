@@ -17,7 +17,7 @@
 
         </div>
     @else
-        <div class="p-4 columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5">
+        <div class="py-7 px- flex flex-wrap flex-row justify-center items-center gap-y-4">
             @foreach ($images as $image)
                 <livewire:image-component :image="$image" :wire:key="$image->id" lazy />
             @endforeach
