@@ -12,7 +12,8 @@ use Livewire\WithFileUploads;
  * This class represents the Livewire component for uploading images.
  * @package App\Livewire
  */
-class Upload extends Component {
+class Upload extends Component
+{
 
     use WithFileUploads;
 
@@ -27,7 +28,7 @@ class Upload extends Component {
     public $negativePrompt;
 
     public $public = false;
-    public $style;
+    public $style = "realistic";
 
     /**
      * Validation rules for the component properties.
@@ -47,7 +48,8 @@ class Upload extends Component {
     /**
      * Submit the form and save the image.
      */
-    public function submit() {
+    public function submit()
+    {
         $this->validate();
         Image::create([
             'seed'           => $this->seed,
@@ -74,7 +76,8 @@ class Upload extends Component {
     /**
      * Reset the image property.
      */
-    public function resetImage() {
+    public function resetImage()
+    {
         $this->reset('image');
         $this->id++;
         session()->flash('success', 'Image Reset');
@@ -83,7 +86,8 @@ class Upload extends Component {
     /**
      * Render the component.
      */
-    public function render() {
+    public function render()
+    {
         return view('livewire.artivision.upload');
     }
 }

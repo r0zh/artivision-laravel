@@ -15,7 +15,8 @@ use App\Models\Image;
  * This class represents the Livewire component for creating an image in the Artivision application.
  * It handles the fetching of image data, saving the image, and rendering the view.
  */
-class Create extends Component {
+class Create extends Component
+{
     // Properties
     public $fetching;
     public $positive_prompt;
@@ -24,7 +25,7 @@ class Create extends Component {
     public $imagePath;
     public $name;
     public $ratio = "1:1";
-    public $style;
+    public $style = "realistic";
 
     // Validation rules
     protected $rules = [
@@ -42,7 +43,8 @@ class Create extends Component {
      * This method is called when the component is being mounted.
      * It initializes the $fetching property.
      */
-    public function mount() {
+    public function mount()
+    {
         $this->fetching = false;
     }
 
@@ -53,7 +55,8 @@ class Create extends Component {
      * It sets the $fetching property to true, validates the form data,
      * and dispatches the 'fetch-image' event.
      */
-    public function fetch() {
+    public function fetch()
+    {
         $this->fetching = true;
         $this->validate();
         $this->dispatch('fetch-image');
@@ -67,14 +70,15 @@ class Create extends Component {
      * saves the image to storage, and sets the $fetching property to false.
      */
     #[On('fetch-image')]
-    public function fetchImage() {
+    public function fetchImage()
+    {
         // get data from the form
         $this->positive_prompt;
         $this->negative_prompt;
         $this->seed;
         $json     = json_encode(['positivePrompt' => $this->positive_prompt, 'negativePrompt' => $this->negative_prompt, "seed" => $this->seed, "ratio" => $this->ratio, "style" => $this->style]);
         $address  = "https://1843-2a0c-5a85-6402-c500-dee3-dd3c-b34e-c0d2.ngrok-free.app/get_image";
-        $response = Http::withBody($json, 'application/json')->timeout(60 * 3)
+        $response = Http::withBody($json, 'application/json')->timeout(60 * 5)
             ->withHeaders([
                 'Content-Type' => 'application/json',
             ])->post($address);
@@ -94,7 +98,8 @@ class Create extends Component {
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function saveImage() {
+    public function saveImage()
+    {
         // move the image to the public or private directory
         $userPath = Auth::user()->id . '_' . explode('@', Auth::user()->email)[0];
         Storage::disk('public')->move($this->imagePath, 'images/' . $userPath . '/' . $this->name . '.png');
@@ -124,7 +129,8 @@ class Create extends Component {
      *
      * @return \Illuminate\View\View
      */
-    public function render() {
+    public function render()
+    {
         return view('livewire.artivision.create');
     }
 }
