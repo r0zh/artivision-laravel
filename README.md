@@ -18,6 +18,7 @@ Tecnologías Utilizadas
 *   **Livewire**: Simplifica la creación de interfaces dinámicas en PHP, permitiendo la construcción de aplicaciones web modernas sin salir del entorno de Laravel.
 *   **wire-elements/modal**: Un componente Livewire que ofrece una modal personalizable y fácil de usar, manteniendo el estado de múltiples modales hijos. [wire-elements/modal](https://github.com/wire-elements/modal?tab=readme-ov-file)
 *   **AlpineJs**: Una librería ligera y potente para crear interacciones dinámicas en la web con un enfoque declarativo.
+*   **Guzzle**: Un cliente HTTP para PHP que facilita el envío de solicitudes a través de una API.
 
 Estructura de la base de datos
 ------------------------------
@@ -59,8 +60,3 @@ Para instalar y comenzar a utilizar Artivision, sigue estos pasos:
 *   **Community**: Visualiza todas las fotos públicas, incluyendo las del usuario.
 *   **Admin**: Acceso a todas las fotos, públicas y privadas, para moderadores y administradores.
 *   **Profile**: Permite editar el perfil del usuario.
-
-Contribuir
-----------
-
-Si estás interesado en contribuir a Artivision, revisa las pautas de contribución y no dudes en abrir un issue o pull request. ¡Estamos abiertos a nuevas ideas y mejoras!
