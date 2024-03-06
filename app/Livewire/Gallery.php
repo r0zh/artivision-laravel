@@ -6,6 +6,12 @@ use App\Models\Image;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
+/**
+ * Class Gallery
+ * @package App\Livewire
+ *
+ * This class represents a Livewire component to manage the gallery page.
+ */
 class Gallery extends Component {
     public $images;
 
@@ -13,15 +19,23 @@ class Gallery extends Component {
 
     public $selectedImage = null;
 
+    // search query
     public $search;
 
-
+    // direction of image ordering
     public $direction = 'desc';
 
+    /**
+     * Mount the component and retrieve all images from the database.
+     */
     public function mount() {
         $this->images = Image::where('user_id', auth()->id())->get();
     }
 
+    /**
+     * Update the filter value and fetch the images accordingly.
+     * @param $filter
+     */
     #[On('filterUpdated')]
     public function updateFilterVisibility($filter) {
         if ($filter != $this->filter) {
@@ -30,6 +44,10 @@ class Gallery extends Component {
         }
     }
 
+    /**
+     * Update the search value and fetch the images accordingly.
+     * @param $search
+     */
     #[On('searchUpdated')]
     public function updateSearch($search) {
         if ($search != $this->search) {
@@ -39,6 +57,10 @@ class Gallery extends Component {
 
     }
 
+    /**
+     * Update the order direction and fetch the images accordingly.
+     * @param $direction
+     */
     #[On('orderUpdated')]
     public function updateOrder($direction) {
         if ($direction != $this->direction) {
@@ -47,6 +69,9 @@ class Gallery extends Component {
         }
     }
 
+    /**
+     * Fetch the images based on the current filter, search, and order direction.
+     */
     public function getImages() {
         if ($this->filter == 'all') {
             $this->images = Image::where('user_id', auth()->id())
@@ -68,21 +93,35 @@ class Gallery extends Component {
         }
     }
 
+    /**
+     * Update the filter value and fetch the images accordingly.
+     */
     #[On('imageDeleted')]
     public function imageDeleted() {
         $this->getImages();
     }
 
+    /**
+     * Fetch the images when the image visibility is updated.
+     */
     #[On('imageVisibilityUpdated')]
     public function imageVisibilityUpdated() {
         $this->getImages();
     }
 
+    /**
+     * Handle the event when an image is selected.
+     * Dispatch the 'openModal' event with the 'ImageDetails' component and the image ID as parameters.
+     * @param $id
+     */
     #[On('imageSelected')]
     public function imageSelected($id) {
         $this->dispatch('openModal', 'ImageDetails', ['id' => $id]);
     }
 
+    /**
+     * Render the Livewire component.
+     */
     public function render() {
         return view('livewire.artivision.gallery');
     }

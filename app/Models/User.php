@@ -8,6 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * Class User
+ * 
+ * This class represents a user model.
+ */
 class User extends Authenticatable {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -42,10 +47,19 @@ class User extends Authenticatable {
         'password'          => 'hashed',
     ];
 
+    /**
+     * Get the images for the user.
+     */
     public function images() {
         return $this->hasMany(Image::class)->first();
     }
 
+    /**
+     * Check if the user has a specific role.
+     *
+     * @param string $roleName The role name.
+     * @return bool
+     */
     public function hasRole($roleName) {
         if ($this->role->name === $roleName) {
             return true;
@@ -53,6 +67,9 @@ class User extends Authenticatable {
         return false;
     }
 
+    /**
+     * Get the role for the user.
+     */
     public function role() {
         return $this->belongsTo(Role::class);
     }
