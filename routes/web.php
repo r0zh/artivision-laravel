@@ -15,6 +15,10 @@ use Livewire\Volt\Volt;
 */
 Route::view('/', 'upload')->middleware(['auth'])->name('upload');
 
+Route::view('create', 'create')
+    ->middleware(['auth'])
+    ->name('create');
+
 Route::view('upload', 'upload')
     ->middleware(['auth', 'verified'])
     ->name('upload');

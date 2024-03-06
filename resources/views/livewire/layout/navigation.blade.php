@@ -28,6 +28,9 @@ new class extends Component {
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:flex sm:-my-px sm:ms-10">
+                    <x-nav-link :href="route('create')" :active="request()->routeIs('create')" wire:navigate>
+                        {{ __('Create') }}
+                    </x-nav-link>
                     <x-nav-link :href="route('upload')" :active="request()->routeIs('upload')" wire:navigate>
                         {{ __('Upload') }}
                     </x-nav-link>

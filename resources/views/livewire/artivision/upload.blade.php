@@ -2,13 +2,37 @@
     <div class="col-span-4 col-start-2">
         <h2 class="mb-4 text-xl font-bold">Image Info</h2>
         <form wire:submit.prevent="submit">
+            
             <div class="mb-4">
                 <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Image
                     name</label>
                 <input type="text" name="name" id="name" wire:model="name"
                     class="block mt-1 w-full text-gray-800 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                     placeholder="Enter image name">
-                @error('seed')
+                @error('name')
+                    <span class="mt-2 font-bold text-red-600">{{ $message }}</span>
+                @enderror
+            </div>
+            
+
+            <div class="mb-4">
+                <label for="positivePrompt" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Positive
+                    Prompt</label>
+                <input type="text" name="positivePrompt" id="positivePrompt" wire:model="positivePrompt"
+                    class="block mt-1 w-full text-gray-800 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    placeholder="Enter positive prompt">
+                @error('positivePrompt')
+                    <span class="mt-2 font-bold text-red-600">{{ $message }}</span>
+                @enderror
+            </div>
+            
+            <div class="mb-4">
+                <label for="negativePrompt" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Negative
+                    Prompt</label>
+                <input type="text" name="negativePrompt" id="negativePrompt" wire:model="negativePrompt"
+                    class="block mt-1 w-full text-gray-800 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    placeholder="Enter negative prompt">
+                @error('negativePrompt')
                     <span class="mt-2 font-bold text-red-600">{{ $message }}</span>
                 @enderror
             </div>
@@ -23,26 +47,7 @@
                 @enderror
             </div>
 
-            <div class="mb-4">
-                <label for="positivePrompt" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Positive
-                    Prompt</label>
-                <input type="text" name="positivePrompt" id="positivePrompt" wire:model="positivePrompt"
-                    class="block mt-1 w-full text-gray-800 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                    placeholder="Enter positive prompt">
-                @error('positivePrompt')
-                    <span class="mt-2 font-bold text-red-600">{{ $message }}</span>
-                @enderror
-            </div>
-            <div class="mb-4">
-                <label for="negativePrompt" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Negative
-                    Prompt</label>
-                <input type="text" name="negativePrompt" id="negativePrompt" wire:model="negativePrompt"
-                    class="block mt-1 w-full text-gray-800 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                    placeholder="Enter negative prompt">
-                @error('negativePrompt')
-                    <span class="mt-2 font-bold text-red-600">{{ $message }}</span>
-                @enderror
-            </div>
+            
 
             <!-- toggle public or private -->
             <div class="flex mb-4">
