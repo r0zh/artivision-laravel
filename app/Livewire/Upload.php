@@ -27,6 +27,7 @@ class Upload extends Component {
     public $negativePrompt;
 
     public $public = false;
+    public $style;
 
     /**
      * Validation rules for the component properties.
@@ -38,6 +39,7 @@ class Upload extends Component {
         'negativePrompt' => 'required|string',
         'image'          => 'required|mimes:jpeg,png,jpg,gif|max:2048',
         'public'         => 'boolean',
+        'style'          => 'required'
     ];
 
     public $id = 1;
@@ -51,6 +53,7 @@ class Upload extends Component {
             'seed'           => $this->seed,
             'positivePrompt' => $this->positivePrompt,
             'negativePrompt' => $this->negativePrompt,
+            'style'          => $this->style,
             'public'         => $this->public,
             // Store the image in the public or private directory
             'path'           => $this->public ? Storage::disk('public')->putFileAs(

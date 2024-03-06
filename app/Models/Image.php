@@ -25,6 +25,7 @@ class Image extends Model {
         'positivePrompt',
         'negativePrompt',
         'public',
+        'style'
     ];
 
     public function user() {

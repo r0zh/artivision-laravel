@@ -9,9 +9,15 @@
             <h1 class="text-3xl font-bold">Positive Prompt</h1>
             <p>{{ $image->positivePrompt }}</p>
             <h1 class="text-3xl font-bold">NegativePrompt</h1>
+            @if($image->negativePrompt)
             <p>{{ $image->negativePrompt }}</p>
+            @else
+            <p>No negative prompt</p>
+            @endif
             <h1 class="text-3xl font-bold">User</h1>
             <p>{{ $image->user()->name }}</p>
+            <h1 class="text-3xl font-bold">Style</h1>
+            <p>{{ $image->style }}</p>
             <h1 class="text-3xl font-bold"> Created At</h1>
             <p>{{ $dateCreated }}</p>
             @if ($image->user()->id == auth()->id() || auth()->user()->hasRole('moderator') || auth()->user()->hasRole('admin'))

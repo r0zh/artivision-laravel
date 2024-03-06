@@ -46,11 +46,22 @@
                     <span class="mt-2 font-bold text-red-600">{{ $message }}</span>
                 @enderror
             </div>
+            <div class="mb-4">
+                <label for="style" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Style</label>
+                <select name="style" id="style" wire:model="style"
+                    class="block mt-1 w-full text-gray-700 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    <option value="realistic" selected>Realistic</option>
+                    <option value="cartoon">Cartoon</option>
+                    <option value="painting">Painting </option>
+                </select>
+                @error('style')
+                    <span class="mt-2 font-bold text-red-600">{{ $message }}</span>
+                @enderror
 
             
 
             <!-- toggle public or private -->
-            <div class="flex mb-4">
+            <div class="flex mb-4 mt-4">
                 <label for="public" class="block font-medium text-gray-700 dark:text-gray-300">Public</label>
                 <input type="checkbox" name="public" id="public" wire:model="public"
                     class="block mt-1 ml-2 text-gray-800 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">

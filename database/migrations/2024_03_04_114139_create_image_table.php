@@ -15,8 +15,9 @@ return new class extends Migration {
             $table->string('path');
             $table->bigInteger('seed');
             $table->text('positivePrompt');
-            $table->text('negativePrompt');
+            $table->text('negativePrompt')->nullable();
             $table->boolean('public');
+            $table->string('style');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

@@ -44,8 +44,19 @@
                     <span class="mt-2 font-bold text-red-600">{{ $message }}</span>
                 @enderror
             </div>
-            <!-- Select ratio -->
             <div class="mb-4">
+                <label for="style" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Style</label>
+                <select name="style" id="style" wire:model="style"
+                    class="block mt-1 w-full text-gray-700 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    <option value="realistic" selected>Realistic</option>
+                    <option value="cartoon">Cartoon</option>
+                    <option value="painting">Painting</option>
+                </select>
+                @error('style')
+                    <span class="mt-2 font-bold text-red-600">{{ $message }}</span>
+                @enderror
+
+            <div class="mb-4 mt-4">
                 <label for="ratio" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Ratio</label>
                 <select name="ratio" id="ratio" wire:model="ratio"
                     class="block mt-1 w-full text-gray-800 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
@@ -55,7 +66,6 @@
                 @error('ratio')
                     <span class="mt-2 font-bold text-red-600">{{ $message }}</span>
                 @enderror
-            <!-- Submit Button -->
             <div class="flex justify-center items-center mt-5 w-full">
                 <button
                     class="py-2 px-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
@@ -64,7 +74,6 @@
                 </button>
             </div>
         </form>
-        <!-- Fetching State -->
         @if ($fetching)
             <div class="flex justify-center items-center w-full h-[500px]">
                 <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -265,13 +274,11 @@
                 </svg>
             </div>
         @endif
-        <!-- Image Display -->
         @if (!$fetching && $imagePath)
             <div class="flex justify-center items-center flex-col w-full gap-y-2 mt-10">
                 <div class="flex justify-center items-center rounded-lg">
                     <img src="{{ asset('storage/' . $imagePath) }}" alt="image" class="h-auto w-[400px] rounded-xl"> 
                 </div>
-                <!-- Save Image Button -->
                 <div class="flex justify-between items-center">
                     <form wire:submit.prevent="saveImage">
                         <button

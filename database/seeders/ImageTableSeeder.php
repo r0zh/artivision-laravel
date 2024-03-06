@@ -21,6 +21,7 @@ class ImageTableSeeder extends Seeder {
                 'positivePrompt' => 'cat, beautiful, cute.',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => true,
+                'style'          => 'realistic',
                 'created_at'     => now(),
             ],
             [
@@ -30,6 +31,7 @@ class ImageTableSeeder extends Seeder {
                 'positivePrompt' => 'plant, green',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => true,
+                'style'          => 'realistic',
                 'created_at'     => now(),
             ],
             [
@@ -39,6 +41,7 @@ class ImageTableSeeder extends Seeder {
                 'positivePrompt' => 'abstract, art.',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => true,
+                'style'          => 'realistic',
                 'created_at'     => Carbon::yesterday(),
             ],
             [
@@ -48,6 +51,7 @@ class ImageTableSeeder extends Seeder {
                 'positivePrompt' => 'cat, silly, cute.',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => true,
+                'style'          => 'realistic',
                 'created_at'     => now(),
             ],
             [
@@ -57,6 +61,7 @@ class ImageTableSeeder extends Seeder {
                 'positivePrompt' => 'two cats, flowers, white, blue eyes',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => true,
+                'style'          => 'realistic',
                 'created_at'     => Carbon::yesterday(),
 
             ],
@@ -67,6 +72,7 @@ class ImageTableSeeder extends Seeder {
                 'positivePrompt' => 'bird',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => true,
+                'style'          => 'realistic',
                 'created_at'     => now(),
             ],
             [
@@ -76,6 +82,7 @@ class ImageTableSeeder extends Seeder {
                 'positivePrompt' => 'sun, landscape',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => true,
+                'style'          => 'realistic',
                 'created_at'     => Carbon::yesterday(),
             ],
             [
@@ -85,6 +92,7 @@ class ImageTableSeeder extends Seeder {
                 'positivePrompt' => 'abstract, interior',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => true,
+                'style'          => 'realistic',
                 'created_at'     => now(),
             ],
             [
@@ -94,6 +102,7 @@ class ImageTableSeeder extends Seeder {
                 'positivePrompt' => 'pengiun, ice, cold, cute',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => false,
+                'style'          => 'realistic',
                 'created_at'     => now(),
             ],
             [
@@ -103,6 +112,7 @@ class ImageTableSeeder extends Seeder {
                 'positivePrompt' => 'heart, metalic, green',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => false,
+                'style'          => 'realistic',
                 'created_at'     => now(),
             ],
             [
@@ -112,6 +122,7 @@ class ImageTableSeeder extends Seeder {
                 'positivePrompt' => 'placeholder',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => true,
+                'style'          => 'realistic',
                 'created_at'     => now(),
             ],
             [
@@ -121,6 +132,7 @@ class ImageTableSeeder extends Seeder {
                 'positivePrompt' => 'placeholder',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => true,
+                'style'          => 'realistic',
                 'created_at'     => Carbon::yesterday(),
             ],
             [
@@ -130,6 +142,7 @@ class ImageTableSeeder extends Seeder {
                 'positivePrompt' => 'space, galaxy.',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => true,
+                'style'          => 'realistic',
                 'created_at'     => Carbon::yesterday(),
             ],
             [
@@ -139,6 +152,7 @@ class ImageTableSeeder extends Seeder {
                 'positivePrompt' => 'conference, people.',
                 'negativePrompt' => 'This is a negative prompt.',
                 'public'         => false,
+                'style'          => 'realistic',
                 'created_at'     => now(),
             ],
         ]);
