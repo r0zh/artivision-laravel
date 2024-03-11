@@ -4,4 +4,6 @@
 imgages/*
 !images/1_johndoe
 !images/2_janedoe
+!images/1_johndoe/*
+!images/2_janedoe/*
 !tmp
